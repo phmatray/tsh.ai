@@ -1,0 +1,36 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.idea/
+*.swp
+*.DS_Store
+
+## Build artifacts
+artifacts/
+publish/
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+## Logs
+logs/
+*.log
+
+## Environment
+.env
+.env.*
+appsettings.Local.json
+appsettings.Development.json
+
+## Docker
+.dockerignore
+
+## OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini

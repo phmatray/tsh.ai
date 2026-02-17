@@ -1,0 +1,257 @@
+@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Philippe Matray — tsh.ai</PageTitle>
+
+<!-- ── HERO ──────────────────────────────────────────────────── -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-badge fade-up">
+            <span>☕</span>
+            <span>Chai &amp; Code</span>
+        </div>
+        <h1 class="hero-name fade-up fade-up-delay-1">Philippe Matray</h1>
+        <p class="hero-tagline fade-up fade-up-delay-2">
+            Je construis des <strong>AI agent teams</strong> pour PMEs <strong>.NET</strong> —<br />
+            et je partage tout en chemin.
+        </p>
+        <div class="hero-actions fade-up fade-up-delay-3">
+            <a href="#newsletter-signup" class="btn btn-primary btn-lg">☕ Le Chai du Dev</a>
+            <a href="/projets" class="btn btn-secondary btn-lg">Voir mes projets →</a>
+        </div>
+    </div>
+</section>
+
+<div class="divider container"></div>
+
+<!-- ── NEWSLETTER SIGNUP ──────────────────────────────────────── -->
+<section class="newsletter-section" id="newsletter-signup">
+    <div class="container">
+        <div class="newsletter-box">
+            <div class="newsletter-label">
+                <span>☕</span>
+                <span>Newsletter hebdomadaire</span>
+            </div>
+            <h2>Le Chai du Dev</h2>
+            <p class="tagline">La dose hebdomadaire qui réchauffe ta stack</p>
+
+            @if (_subscribed)
+            {
+                <div class="newsletter-success fade-up">
+                    ✅ Parfait ! Tu es sur la liste. À la semaine prochaine ☕
+                </div>
+            }
+            else
+            {
+                <div class="newsletter-form">
+                    <input
+                        type="email"
+                        placeholder="ton@email.com"
+                        @bind="_email"
+                        @bind:event="oninput"
+                        @onkeydown="HandleKeydown"
+                        disabled="@_loading"
+                    />
+                    <button @onclick="Subscribe" disabled="@(_loading || string.IsNullOrWhiteSpace(_email))">
+                        @if (_loading)
+                        {
+                            <span>...</span>
+                        }
+                        else
+                        {
+                            <span>Je m'abonne →</span>
+                        }
+                    </button>
+                </div>
+                <p class="newsletter-note">Pas de spam. Un email par semaine. Désabonnement en un clic.</p>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- ── CE QUE TU VAS RECEVOIR ─────────────────────────────────── -->
+<section class="benefits-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Au programme</div>
+            <h2>Ce que tu vas recevoir</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon amber-bg">🔷</div>
+                <h3>Tips .NET pragmatiques</h3>
+                <p>Des patterns concrets, des astuces C# qui font gagner du temps, et les nouveautés .NET que tu peux vraiment utiliser en prod.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon violet-bg">🤖</div>
+                <h3>AI Agents en pratique</h3>
+                <p>Comment je construis des équipes d'agents IA pour mes clients : architecture, prompts, pièges à éviter. Du concret, pas de la théorie.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon green-bg">🏗️</div>
+                <h3>Coulisses d'Atypical</h3>
+                <p>La vie d'un CTO freelance : les décisions d'architecture, les clients, les succès, les échecs. La vraie histoire derrière le code.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider container"></div>
+
+<!-- ── PROJETS RÉCENTS ────────────────────────────────────────── -->
+<section class="projects-section">
+    <div class="container" style="padding: 56px 24px;">
+        <div class="section-header">
+            <div class="section-label amber">Open Source</div>
+            <h2>Projets récents</h2>
+            <p class="text-muted" style="margin-top: 12px; font-size: 0.95rem;">Du code public, maintenu avec soin. MIT license.</p>
+        </div>
+        <div class="projects-grid">
+            <a href="https://github.com/phmatray/TaLibStandard" target="_blank" rel="noopener" class="project-card">
+                <div class="project-card-header">
+                    <span class="project-icon">📊</span>
+                    <span class="project-stars">⭐ TaLibStandard</span>
+                </div>
+                <h3>TaLibStandard</h3>
+                <p>Portage moderne de TA-Lib en .NET Standard — indicateurs d'analyse technique pour la finance algorithmique.</p>
+                <div class="project-tags">
+                    <span class="tag amber">.NET</span>
+                    <span class="tag">Finance</span>
+                    <span class="tag">TA-Lib</span>
+                </div>
+                <span class="project-link">Voir sur GitHub →</span>
+            </a>
+
+            <a href="https://github.com/phmatray/FormCraft" target="_blank" rel="noopener" class="project-card">
+                <div class="project-card-header">
+                    <span class="project-icon">📋</span>
+                    <span class="project-stars">⭐ FormCraft</span>
+                </div>
+                <h3>FormCraft</h3>
+                <p>Générateur de formulaires Blazor fluent — construis des formulaires dynamiques typés avec une API élégante.</p>
+                <div class="project-tags">
+                    <span class="tag amber">Blazor</span>
+                    <span class="tag violet">Fluent API</span>
+                    <span class="tag">.NET</span>
+                </div>
+                <span class="project-link">Voir sur GitHub →</span>
+            </a>
+
+            <a href="https://github.com/phmatray/TenantKit" target="_blank" rel="noopener" class="project-card">
+                <div class="project-card-header">
+                    <span class="project-icon">🏢</span>
+                    <span class="project-stars">⭐ TenantKit</span>
+                </div>
+                <h3>TenantKit</h3>
+                <p>Multi-tenancy pour ASP.NET Core — résolution de tenant, isolation de données, et stratégies configurables.</p>
+                <div class="project-tags">
+                    <span class="tag amber">ASP.NET</span>
+                    <span class="tag">SaaS</span>
+                    <span class="tag">Multi-tenant</span>
+                </div>
+                <span class="project-link">Voir sur GitHub →</span>
+            </a>
+
+            <a href="https://github.com/phmatray/NuGetPulse" target="_blank" rel="noopener" class="project-card">
+                <div class="project-card-header">
+                    <span class="project-icon">📦</span>
+                    <span class="project-stars">⭐ NuGetPulse</span>
+                </div>
+                <h3>NuGetPulse</h3>
+                <p>Dashboard de suivi pour tes packages NuGet — téléchargements, tendances, et alertes de mises à jour en temps réel.</p>
+                <div class="project-tags">
+                    <span class="tag amber">NuGet</span>
+                    <span class="tag violet">Blazor</span>
+                    <span class="tag">Dashboard</span>
+                </div>
+                <span class="project-link">Voir sur GitHub →</span>
+            </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="/projets" class="btn btn-secondary">Voir tous les projets →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ── À PROPOS ───────────────────────────────────────────────── -->
+<section style="padding: 80px 0;">
+    <div class="container">
+        <div class="about-strip">
+            <div class="about-text">
+                <div class="about-avatar">👨‍💻</div>
+                <div class="section-label" style="margin-bottom: 16px;">À propos</div>
+                <h2>Salut, je suis Philippe</h2>
+                <p style="margin-top: 16px;">
+                    CTO freelance et fondateur d'<strong>Atypical Consulting</strong>.
+                    Je construis des systèmes .NET robustes depuis plus de 10 ans, et depuis 2 ans j'explore 
+                    sérieusement l'automatisation par AI agents pour des PMEs.
+                </p>
+                <p>
+                    Le Chai du Dev, c'est ma façon de partager ce que j'apprends en chemin — 
+                    sans bullshit marketing, avec du code réel et des retours d'expérience concrets.
+                </p>
+                <div class="about-links">
+                    <a href="https://github.com/phmatray" target="_blank" rel="noopener" class="social-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        @@phmatray
+                    </a>
+                    <a href="https://www.linkedin.com/in/phmatray" target="_blank" rel="noopener" class="social-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://atypical-consulting.com" target="_blank" rel="noopener" class="social-link">
+                        🏢 Atypical Consulting
+                    </a>
+                </div>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-box">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">ans .NET</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">4+</span>
+                    <span class="stat-label">libs OSS</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">PME</span>
+                    <span class="stat-label">clients cibles</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-num">☕</span>
+                    <span class="stat-label">par semaine</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private string _email = string.Empty;
+    private bool _loading;
+    private bool _subscribed;
+
+    private async Task HandleKeydown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !string.IsNullOrWhiteSpace(_email) && !_loading)
+        {
+            await Subscribe();
+        }
+    }
+
+    private async Task Subscribe()
+    {
+        if (string.IsNullOrWhiteSpace(_email)) return;
+
+        _loading = true;
+        StateHasChanged();
+
+        // Simulate API call — Philippe configurera Beehiiv après
+        await Task.Delay(800);
+
+        _loading = false;
+        _subscribed = true;
+    }
+}

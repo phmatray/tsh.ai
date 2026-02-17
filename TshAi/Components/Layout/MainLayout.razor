@@ -1,0 +1,54 @@
+@inherits LayoutComponentBase
+@inject NavigationManager Nav
+
+<nav class="site-nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            tsh<span class="logo-dot">.</span>ai
+        </a>
+        <div class="nav-links">
+            <NavLink href="/" Match="NavLinkMatch.All" class="nav-link" ActiveClass="active">Accueil</NavLink>
+            <NavLink href="/newsletter" class="nav-link" ActiveClass="active">Newsletter</NavLink>
+            <NavLink href="/projets" class="nav-link" ActiveClass="active">Projets</NavLink>
+            <a href="#newsletter-signup" class="nav-cta">☕ S'abonner</a>
+        </div>
+    </div>
+</nav>
+
+<main style="min-height: calc(100vh - 64px); display: flex; flex-direction: column;">
+    @Body
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">tsh<span>.</span>ai</div>
+                <p>Le hub de Philippe Matray — AI agent teams pour PMEs .NET.</p>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/newsletter">Newsletter</a></li>
+                    <li><a href="/projets">Projets OSS</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-col">
+                <h4>Liens</h4>
+                <ul>
+                    <li><a href="https://github.com/phmatray" target="_blank" rel="noopener">GitHub ↗</a></li>
+                    <li><a href="https://www.linkedin.com/in/phmatray" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="https://atypical-consulting.com" target="_blank" rel="noopener">Atypical Consulting ↗</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2025 Philippe Matray · MIT License</span>
+            <a href="https://github.com/phmatray/tsh.ai" target="_blank" rel="noopener">Code source ↗</a>
+        </div>
+    </div>
+</footer>
