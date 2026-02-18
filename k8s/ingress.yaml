@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - tsh.garry-ai.cloud
-      secretName: tsh-ai-tls
+        - lechai.garry-ai.cloud
+      secretName: lechai-tls
   rules:
-    - host: tsh.garry-ai.cloud
+    - host: lechai.garry-ai.cloud
       http:
         paths:
           - path: /

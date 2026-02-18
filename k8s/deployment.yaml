@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
         - name: tsh-ai
-          image: docker.io/library/tsh-ai:latest
-          imagePullPolicy: Never
+          image: ghcr.io/phmatray/tsh-ai:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
