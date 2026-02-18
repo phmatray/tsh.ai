@@ -80,21 +80,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to k3s via kubectl
+      - name: Copy k8s manifests to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.K3S_HOST }}
+          username: ${{ secrets.K3S_USER }}
+          key: ${{ secrets.K3S_SSH_KEY }}
+          source: "k8s/"
+          target: "/tmp/tsh-ai-deploy"
+
+      - name: Deploy to k3s
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.K3S_HOST }}
           username: ${{ secrets.K3S_USER }}
           key: ${{ secrets.K3S_SSH_KEY }}
           script: |
-            kubectl apply -f /dev/stdin <<'EOF'
-            $(cat k8s/namespace.yaml)
-            ---
-            $(cat k8s/deployment.yaml)
-            ---
-            $(cat k8s/service.yaml)
-            ---
-            $(cat k8s/ingress.yaml)
-            EOF
+            kubectl apply -f /tmp/tsh-ai-deploy/k8s/
             kubectl rollout restart deployment/tsh-ai -n tsh
             kubectl rollout status deployment/tsh-ai -n tsh --timeout=120s
