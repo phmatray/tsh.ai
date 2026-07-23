@@ -16,6 +16,22 @@
 [![Last commit](https://img.shields.io/github/last-commit/phmatray/tsh.ai)](https://github.com/phmatray/tsh.ai/commits)
 <!-- portfolio-badges:end -->
 
+<!-- portfolio-toc:start -->
+
+## Table of Contents
+
+- [What's inside](#whats-inside)
+- [Newsletter](#newsletter)
+- [Stack](#stack)
+- [Run locally](#run-locally)
+- [Deploy (k8s)](#deploy-k8s)
+- [Projects featured](#projects-featured)
+- [DNS (for Philippe)](#dns-for-philippe)
+- [Contributing](#contributing)
+
+<!-- portfolio-toc:end -->
+
+
 
 > **Le hub de Philippe Matray** — AI agent teams pour PMEs .NET.
 
