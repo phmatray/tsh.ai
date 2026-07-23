@@ -1,3 +1,5 @@
+![tsh.ai banner](.github/banner.png)
+
 # tsh.ai ☕
 
 > **Le hub de Philippe Matray** — AI agent teams pour PMEs .NET.
