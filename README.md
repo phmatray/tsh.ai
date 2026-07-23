@@ -31,6 +31,27 @@
 
 <!-- portfolio-toc:end -->
 
+<!-- portfolio-getstarted:start -->
+
+## Getting Started
+
+### Prerequisites
+
+- [.NET SDK](https://dotnet.microsoft.com/download)
+
+### Run
+
+```bash
+git clone https://github.com/phmatray/tsh.ai.git
+cd tsh.ai
+dotnet restore
+dotnet build
+dotnet run --project TshAi/TshAi.csproj
+```
+
+<!-- portfolio-getstarted:end -->
+
+
 
 
 > **Le hub de Philippe Matray** — AI agent teams pour PMEs .NET.
