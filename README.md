@@ -2,6 +2,21 @@
 
 # tsh.ai ☕
 
+<!-- portfolio-badges:start -->
+<!-- Identity -->
+[![phmatray - tsh.ai](https://img.shields.io/static/v1?label=phmatray&message=tsh.ai&color=blue&logo=github)](https://github.com/phmatray/tsh.ai)
+![Top language](https://img.shields.io/github/languages/top/phmatray/tsh.ai)
+[![Stars](https://img.shields.io/github/stars/phmatray/tsh.ai?style=social)](https://github.com/phmatray/tsh.ai/stargazers)
+[![Forks](https://img.shields.io/github/forks/phmatray/tsh.ai?style=social)](https://github.com/phmatray/tsh.ai/network/members)
+[![License](https://img.shields.io/github/license/phmatray/tsh.ai)](https://github.com/phmatray/tsh.ai/blob/HEAD/LICENSE)
+
+<!-- Activity -->
+[![Issues](https://img.shields.io/github/issues/phmatray/tsh.ai)](https://github.com/phmatray/tsh.ai/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/phmatray/tsh.ai)](https://github.com/phmatray/tsh.ai/pulls)
+[![Last commit](https://img.shields.io/github/last-commit/phmatray/tsh.ai)](https://github.com/phmatray/tsh.ai/commits)
+<!-- portfolio-badges:end -->
+
+
 > **Le hub de Philippe Matray** — AI agent teams pour PMEs .NET.
 
 Personal brand hub + newsletter landing page for [Philippe Matray](https://github.com/phmatray).
