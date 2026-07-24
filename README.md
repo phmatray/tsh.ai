@@ -31,6 +31,19 @@
 
 <!-- portfolio-toc:end -->
 
+<!-- portfolio-features:start -->
+
+## Features
+
+- **Weekly newsletter capture** — the homepage "Le Chai du Dev" signup form (`#newsletter-signup` in `Home.razor`) with inline email validation, a loading state, and a success confirmation once subscribed.
+- **Content-rich landing page** — hero, a "Ce que tu vas recevoir" benefits grid (.NET tips, AI-agent practice, Atypical Consulting behind-the-scenes), a recent-projects showcase, and an about/stats section, all on one Blazor Server route.
+- **Newsletter archive** (`/newsletter`) — dedicated page previewing upcoming issue topics while the first send is being prepared.
+- **OSS project showcase** (`/projets`) — detailed cards for [TaLibStandard](https://github.com/phmatray/TaLibStandard), [FormCraft](https://github.com/phmatray/FormCraft), [TenantKit](https://github.com/phmatray/TenantKit), and [NuGetPulse](https://github.com/phmatray/NuGetPulse), plus a preview of the in-progress `AgentKit` agent-orchestration library.
+- **Hand-rolled "Chai" design system** — a dedicated `app.css` design system (amber/cream/soft-violet palette, custom radii/shadows/typography tokens) plus accessible, `aria-hidden` decorative SVGs (chai cup, cinnamon sticks, star anise).
+- **Container-native CI/CD** — GitHub Actions builds and tests on .NET 10, pushes a Docker image to GHCR, then rolls it out to a k3s cluster (Traefik ingress, cert-manager TLS) via `kubectl`.
+
+<!-- portfolio-features:end -->
+
 <!-- portfolio-getstarted:start -->
 
 ## Getting Started
